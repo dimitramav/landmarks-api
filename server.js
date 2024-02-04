@@ -3,7 +3,6 @@ const dotenv = require("dotenv");
 const app = require("./app");
 
 dotenv.config({ path: "./config.ENV" });
-console.log(process.env);
 mongoose
   .connect(
     `mongodb+srv://${process.env.NAME}:${process.env.PASSWORD}@cluster-mpsp2322.ukqxd9z.mongodb.net/?retryWrites=true&w=majority`
