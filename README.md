@@ -1,1 +1,1 @@
-# landmarks-api
+# pois-api
