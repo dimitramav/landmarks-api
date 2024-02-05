@@ -1,6 +1,4 @@
-// README.md
-
-# Points Of Interest API
+# Points of Interest API
 
 ### Introduction
 
@@ -28,10 +26,10 @@ The API is designed to facilitate core data management operations (Create, Read,
 
 #### Points of Interest (POI)
 
-- Add Points of Interest (POI):
-  Individuals can store new Points of Interest, such as museums, by specifying details like name, category, address, and an optional photo. POIs are stored in the "POIs" collection.
+- Add Points of Interest (POI):Individuals can store new Points of Interest, such as museums, by specifying details like name, category, address, and an optional photo. POIs are stored in the "POIs" collection.
 
 - Discover Points of Interest (POI):
+
   Individuals can explore all Points of Interest in the city.
   The API supports searching for specific POIs based on parameters such as category.
 
@@ -47,14 +45,14 @@ The API is designed to facilitate core data management operations (Create, Read,
 ### Installation Guide
 
 - Clone this repository [here](https://github.com/blackdevelopa/ProjectSupport.git).
-- Run npm install to install all dependencies
+- Run `npm install` to install all dependencies
 - Configure your database choice in the application entry file.
-- Create config.ENV file in your project root folder and add your variables. See confing_sample.ENV for assistance.
+- Create `config.ENV` file in your project root folder and add your variables. See `confing_sample.ENV` for assistance.
 
 ### Usage
 
-- Run npm start to start the application.
-- Connect to the API using Postman on port 8080.
+- Run `npm start` to start the application.
+- Connect to the API using Postman on port `8080`.
 
 ### API Endpoints
 
