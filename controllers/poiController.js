@@ -1,5 +1,6 @@
 const POI = require("../models/poiModel");
 
+// Create a new Point of Interest (POI)
 exports.createPOI = async (req, res) => {
   try {
     const poi = await POI.create(req.body);
@@ -10,6 +11,7 @@ exports.createPOI = async (req, res) => {
   }
 };
 
+// Get all POIs or a specific POI based on query parameters
 exports.getPOIs = async (req, res) => {
   var filter = {};
   for (var k in req.query) {
@@ -34,10 +36,11 @@ exports.getPOIs = async (req, res) => {
   }
 };
 
+// Update a specific POI
 exports.updatePOI = async (req, res) => {
   try {
     const poi = await POI.findOneAndUpdate(
-      { _id: req.params._id },
+      { _id: req.params.id },
       { $set: req.body },
       {
         returnOriginal: false,
@@ -56,9 +59,10 @@ exports.updatePOI = async (req, res) => {
   }
 };
 
+// Delete a specific POI
 exports.deletePOI = async (req, res) => {
   try {
-    const poi = await POI.findOneAndDelete({ _id: req.params._id });
+    const poi = await POI.findOneAndDelete({ _id: req.params.id });
     if (!poi) {
       return res
         .status(404)
@@ -70,10 +74,11 @@ exports.deletePOI = async (req, res) => {
   }
 };
 
+// Store image path for a specific POI
 exports.uploadImage = async (req, res) => {
   try {
     const poi = await POI.findOneAndUpdate(
-      { _id: req.params._id },
+      { _id: req.params.id },
       { $set: { image: req.file.path } },
       {
         returnOriginal: false,

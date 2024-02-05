@@ -1,5 +1,6 @@
 const User = require("../models/userModel");
 
+// Create a new user
 exports.createUser = async (req, res) => {
   try {
     const user = await User.create(req.body);
@@ -10,6 +11,7 @@ exports.createUser = async (req, res) => {
   }
 };
 
+// Get all users
 exports.getUsers = async (req, res) => {
   try {
     const users = await User.find();
@@ -20,6 +22,7 @@ exports.getUsers = async (req, res) => {
   }
 };
 
+// Get a specific user by email
 exports.getUser = async (req, res) => {
   try {
     const user = await User.findOne({ email: req.params.email });
@@ -30,6 +33,7 @@ exports.getUser = async (req, res) => {
   }
 };
 
+// Update a specific user by email
 exports.updateUser = async (req, res) => {
   try {
     const user = await User.findOneAndUpdate(
@@ -53,6 +57,7 @@ exports.updateUser = async (req, res) => {
   }
 };
 
+// Delete a specific user by email
 exports.deleteUser = async (req, res) => {
   try {
     const user = await User.findOneAndDelete({ email: req.params.email });

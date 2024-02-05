@@ -5,12 +5,12 @@ const poiRoutes = express.Router();
 
 poiRoutes.route("/").post(poiController.createPOI).get(poiController.getPOIs);
 poiRoutes
-  .route("/:_id")
+  .route("/:id")
   .patch(poiController.updatePOI)
   .delete(poiController.deletePOI);
 
 poiRoutes
-  .route("/upload/:_id")
+  .route("/upload/:id")
   .patch(upload.single("image"), poiController.uploadImage);
 
 module.exports = poiRoutes;
