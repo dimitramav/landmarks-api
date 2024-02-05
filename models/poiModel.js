@@ -7,7 +7,7 @@ const poiSchema = mongoose.Schema(
     address: Number,
     longitude: Number,
     latitude: Number,
-    photo: {
+    image: {
       type: String,
       required: false,
     },

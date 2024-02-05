@@ -69,3 +69,25 @@ exports.deletePOI = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
+
+exports.uploadImage = async (req, res) => {
+  try {
+    const poi = await POI.findOneAndUpdate(
+      { _id: req.params._id },
+      { $set: { image: req.file.path } },
+      {
+        returnOriginal: false,
+      }
+    );
+    if (poi) {
+      res.status(200).json({ message: "Image upload is successful!" });
+    } else {
+      res
+        .status(404)
+        .json({ message: "POI not found or no changes were made." });
+    }
+  } catch (error) {
+    console.error("Error uploading image:", error);
+    res.status(500).json({ error: "Internal server error" });
+  }
+};

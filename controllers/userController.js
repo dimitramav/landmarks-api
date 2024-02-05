@@ -1,11 +1,5 @@
 const User = require("../models/userModel");
 
-exports.checkAge = (req, res, next) => {
-  if (req.body.age < 18) {
-    return res.status(500).json({ message: "User must be over 18!" });
-  }
-  next();
-};
 exports.createUser = async (req, res) => {
   try {
     const user = await User.create(req.body);

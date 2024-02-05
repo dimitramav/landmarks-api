@@ -1,11 +1,11 @@
 const express = require("express");
 const userController = require("../controllers/userController");
-
+const { validateAge } = require("../middleware/validate");
 const userRoutes = express.Router();
 
 userRoutes
   .route("/")
-  .post(userController.checkAge, userController.createUser)
+  .post(validateAge, userController.createUser)
   .get(userController.getUsers);
 
 userRoutes

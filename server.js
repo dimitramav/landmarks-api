@@ -1,6 +1,18 @@
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const app = require("./app");
+const fs = require("fs");
+
+const directoryPath = "uploads";
+
+// Check if the directory already exists
+if (!fs.existsSync(directoryPath)) {
+  // If not, create the directory
+  fs.mkdirSync(directoryPath);
+  console.log("Directory created successfully.");
+} else {
+  console.log("Directory already exists.");
+}
 
 dotenv.config({ path: "./config.ENV" });
 mongoose
