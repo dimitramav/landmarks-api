@@ -119,7 +119,16 @@ The API is designed to facilitate core data management operations (Create, Read,
     <td><pre>/api/users</pre></td>
     <td>To retrieve all users</td>
     <td>
-      <pre lang="json">200 [{user instance}, ...]</pre>
+      <pre lang="json">200 [ <br/>
+      {
+        "name": "username",<br/>
+        "age": 20,<br/>
+        "email": "user@email.com",<br/>
+        "_id": "xxxx",<br/>
+        "_v": 0<br/>
+       },<br/>
+      ...</br>
+     ]</pre>
       <pre lang="json">500 {"message": error.message}</pre>
     </td>
   </tr>
