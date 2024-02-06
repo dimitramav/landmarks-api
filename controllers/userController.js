@@ -53,7 +53,7 @@ exports.updateUser = async (req, res) => {
     }
   } catch (error) {
     console.error("Error updating user:", error);
-    res.status(500).json({ error: "Internal server error" });
+    res.status(500).json({ error: message.error });
   }
 };
 
@@ -66,7 +66,7 @@ exports.deleteUser = async (req, res) => {
         .status(404)
         .json({ message: "User not found or no changes were made." });
     }
-    res.status(200).json(user);
+    res.status(200).json({ message: "User has been removed successfully!" });
   } catch (error) {
     res.status(500).json({ message: error.message });
   }

@@ -55,7 +55,7 @@ exports.updatePOI = async (req, res) => {
     }
   } catch (error) {
     console.error("Error updating POI:", error);
-    res.status(500).json({ error: "Internal server error" });
+    res.status(500).json({ error: error.message });
   }
 };
 
@@ -68,7 +68,7 @@ exports.deletePOI = async (req, res) => {
         .status(404)
         .json({ message: "POI not found or no changes were made." });
     }
-    res.status(200).json(poi);
+    res.status(200).json({ message: "POI has been removed successfully!" });
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
@@ -93,6 +93,6 @@ exports.uploadImage = async (req, res) => {
     }
   } catch (error) {
     console.error("Error uploading image:", error);
-    res.status(500).json({ error: "Internal server error" });
+    res.status(500).json({ error: error.message });
   }
 };
