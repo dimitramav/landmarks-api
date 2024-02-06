@@ -77,7 +77,12 @@ The API is designed to facilitate core data management operations (Create, Read,
     <td>POST</td>
     <td>To create new POI</td>
     <td><pre>api/pois</pre></td>
-    <td></td>
+    <td> <pre lang="json">{
+    "name": "Polemiko mouseio",<br/>
+    "category": "museum",<br/>
+    "longitude": 80,<br/>
+    "latitude": 90<br/>
+ }</pre></td>
     <td>
       <pre lang="json">200 {
        "name": "Polemiko mouseio",<br/>
@@ -94,13 +99,17 @@ The API is designed to facilitate core data management operations (Create, Read,
     <td>POST</td>
     <td>To create new user</td>
     <td><pre>/api/users</pre></td>
-    <td></td>
+    <td> <pre lang="json">{
+    "name": "username",<br/>
+    "age": 20,<br/>
+    "email": "user@email.com",<br/>
+}</pre></td>
     <td>
         <pre lang="json">200 {
        "name": "username",<br/>
        "age": 20,<br/>
-       "email": "user@email.com",<br/>
-       "_id": "xxxx",<br/>
+       "email": "user@email.com"<br/>
+       "_id": "yyy",<br/>
        "_v": 0<br/>
       }</pre>
       <pre lang="json">500 {"message": error.message}</pre>
@@ -117,11 +126,12 @@ The API is designed to facilitate core data management operations (Create, Read,
       <pre lang="json">200 [ <br/>
       {
         "name": "Polemiko mouseio",<br/>
-       "category": "museum",<br/>
-       "longitude": 80,<br/>
-       "latitude": 90,<br/>
-       "_id": "xxxx",<br/>
-       "_v": 0<br/>
+        "category": "museum",<br/>
+        "longitude": 80,<br/>
+        "latitude": 90,<br/>
+        "image":[optional]
+        "_id": "xxxx",<br/>
+        "_v": 0<br/>
        },<br/>
       ...</br>
      ]</br>
@@ -131,6 +141,7 @@ The API is designed to facilitate core data management operations (Create, Read,
        "category": "museum",<br/>
        "longitude": 80,<br/>
        "latitude": 90,<br/>
+       "image":[optional]
        "_id": "xxxx",<br/>
        "_v": 0<br/>
       }  
@@ -177,7 +188,7 @@ The API is designed to facilitate core data management operations (Create, Read,
     <td>PATCH</td>
     <td>To edit the details of a single POI by id</td>
     <td><pre>/api/pois/:id</pre></td>
-    <td></td>
+    <td><pre>modified POI</pre></td>
     <td>
       <pre lang="json">200 {"message": "POI updated successfully!"}</pre>
       <pre lang="json">404 {"message": "POI not found or no changes were made."}</pre>
@@ -188,7 +199,7 @@ The API is designed to facilitate core data management operations (Create, Read,
     <td>PATCH</td>
     <td>To add or edit the image of a single POI</td>
     <td><pre>/api/pois/upload/:id</pre></td>
-    <td></td>
+    <td><pre lang="json">{ "image": FILE }</pre></td>
     <td>
       <pre lang="json">200 {"message": "Image upload is successful!"}</pre>
       <pre lang="json">404 {"message": "User not found or no changes were made."}</pre>
@@ -199,7 +210,7 @@ The API is designed to facilitate core data management operations (Create, Read,
     <td>PATCH</td>
     <td>To edit the details of a single user by email</td>
     <td><pre>/api/users/:email</pre></td>
-    <td></td>
+    <td><pre>modified user</pre></td>
     <td>
       <pre lang="json">200 {"message": "User updated successfully!"}</pre>
       <pre lang="json">404 {"message": "POI not found or no changes were made."}</pre>
