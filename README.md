@@ -66,18 +66,18 @@ The API is designed to facilitate core data management operations (Create, Read,
 
 ### API Endpoints
 
-| HTTP   | Endpoints             | Action                                                |
-| ------ | ----------------------| ------------------------------------------------------|
-| POST   | `/api/pois`           | To create new POI                                     |
-| POST   | `/api/users`          | To create new user                                    |
-| GET    | `/api/pois`           | To retrieve all or specific POIs based on parameters  |
-| GET    | `/api/users`          | To retrieve all users                                 |
-| GET    | `/api/users/:email`   | To retrieve a single user by email                    |
-| PATCH  | `/api/pois/:id`       | To edit the details of a single POI by id             |
-| PATCH  | `/api/pois/upload/:id`| To add or edit the image of a single POI              |
-| PATCH  | `/api/users/:email`   | To edit the details of a single user by email         |
-| DELETE | `/api/pois/:id`       | To delete a single POI by id                          |
-| DELETE | `/api/users/:email`   | To delete a single user by email                      |
+| HTTP   | Endpoints             | Action                                              | Response                                                |
+| ------ | ----------------------| ----------------------------------------------------|---------------------------------------------------------|
+| POST   | `/api/pois`           | To create new POI                                   |`200`<pre lang="json"> {"name": "Polemiko mouseio","category": "museum","longitude": 80,"latitude": 90, "_id": "xxxx","_v": 0}</pre>`500` <pre lang="json">{"message": error.message}</pre>|
+| POST   | `/api/users`          | To create new user                                  |`200` <pre lang="json">{user instance}</pre>`500` <pre lang="json">{"message":error.message}</pre>|
+| GET    | `/api/pois`           | To retrieve all or specific POIs based on parameters|`200` <pre lang="json">[{poi instance}, ...] //or {poi instance}</pre>`500` <pre lang="json">{"message":error.message}</pre>                                                         |
+| GET    | `/api/users`          | To retrieve all users                               |`200` <pre lang="json">[{user instance}, ...]</pre>`500` <pre lang="json">{"message":error.message}</pre>                                                         |
+| GET    | `/api/users/:email`   | To retrieve a single user by email                  |`200` <pre lang="json">{user instance}</pre>`500` <pre lang="json">{"message":error.message}</pre>                                                         |
+| PATCH  | `/api/pois/:id`       | To edit the details of a single POI by id           |`200` <pre lang="json">{"message":"POI updated successfully!"}</pre>`404` <pre lang="json">{"message":"POI not found or no changes were made."}</pre> 500` <pre lang="json">{"message":error.message}</pre>                                                     |
+| PATCH  | `/api/pois/upload/:id`| To add or edit the image of a single POI            |`200` <pre lang="json">{"message":"Image upload is successful!"}</pre>`404` <pre lang="json">{message:"User not found or no changes were made."}</pre>`500` <pre lang="json">{"message":error.message}</pre>                                    |
+| PATCH  | `/api/users/:email`   | To edit the details of a single user by email       |`200` <pre lang="json">{"message":"User updated successfully!"}</pre><br />`404` <pre lang="json">{"message":"POI not found or no changes were made."}</pre><br />`500` <pre lang="json">{"message":error.message}</pre>                                                         |
+| DELETE | `/api/pois/:id`       | To delete a single POI by id                        |`200` <pre lang="json">{"message":"POI has been removed successfully!"}</pre>`404` <pre lang="json">{"message":"POI not found or no changes were made."}</pre>`500` <pre lang="json">{"message":error.message}</pre>                                                        |
+| DELETE | `/api/users/:email`   | To delete a single user by email                    |`200` <pre lang="json">{"message":"User has been removed successfully!"}</pre>`404` <pre lang="json">{"message":"User not found or no changes were made."}</pre>`500` <pre lang="json">{"message":error.message}</pre>                                                        |
 
 ### Technologies Used
 
