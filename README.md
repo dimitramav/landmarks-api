@@ -65,19 +65,131 @@ The API is designed to facilitate core data management operations (Create, Read,
 - Connect to the API using Postman on port `8080`.
 
 ### API Endpoints
+<table>
+  <tr>
+    <th>HTTP</th>
+    <th>Endpoints</th>
+    <th>Action</th>
+    <th>Response</th>
+  </tr>
+  <tr>
+    <td>POST</td>
+    <td><pre>api/pois</pre></td>
+    <td>To create new POI</td>
+    <td>
+      <pre lang="json">200 {
+       "name": "Polemiko mouseio",<br/>
+       "category": "museum",<br/>
+       "longitude": 80,<br/>
+       "latitude": 90,<br/>
+       "_id": "xxxx",<br/>
+       "_v": 0<br/>
+      }</pre>
+      <pre lang="json">500 {"message": error.message}</pre>
+    </td>
+  </tr>
+  <tr>
+    <td>POST</td>
+    <td><pre>/api/users</pre></td>
+    <td>To create new user</td>
+    <td>
+        <pre lang="json">200 {
+       "name": "username",<br/>
+       "age": 20,<br/>
+       "email": "user@email.com",<br/>
+       "_id": "xxxx",<br/>
+       "_v": 0<br/>
+      }</pre>
+      <pre lang="json">500 {"message": error.message}</pre>
+    </td>
+  </tr>
+  <tr>
+    <td>GET</td>
+    <td><pre>/api/pois</pre></td>
+    <td>
+      To retrieve all or specific POIs based on parameters
+    </td>
+    <td>
+      <pre lang="json">200 [{poi instance}, ...] //or {poi instance}</pre>
+      <pre lang="json">500 {"message": error.message}</pre>
+    </td>
+  </tr>
+  <tr>
+    <td>GET</td>
+    <td><pre>/api/users</pre></td>
+    <td>To retrieve all users</td>
+    <td>
+      <pre lang="json">200 [{user instance}, ...]</pre>
+      <pre lang="json">500 {"message": error.message}</pre>
+    </td>
+  </tr>
+  <tr>
+    <td>GET</td>
+    <td><pre>/api/users/:email</pre></td>
+    <td>To retrieve a single user by email</td>
+    <td>
+      <pre lang="json">200 {
+       "name": "username",<br/>
+       "age": 20,<br/>
+       "email": "user@email.com",<br/>
+       "_id": "xxxx",<br/>
+       "_v": 0<br/>
+      }</pre>
+      <pre lang="json">500 {"message": error.message}</pre>
+    </td>
+  </tr>
+  <tr>
+    <td>PATCH</td>
+    <td><pre>/api/pois/:id</pre></td>
+    <td>To edit the details of a single POI by id</td>
+    <td>
+      <pre lang="json">200 {"message": "POI updated successfully!"}</pre>
+      <pre lang="json">404 {"message": "POI not found or no changes were made."}</pre>
+      <pre lang="json">500 {"message": error.message}</pre>
+    </td>
+  </tr>
+  <tr>
+    <td>PATCH</td>
+    <td><pre>/api/pois/upload/:id</pre></td>
+    <td>To add or edit the image of a single POI</td>
+    <td>
+      <pre lang="json">200 {"message": "Image upload is successful!"}</pre>
+      <pre lang="json">404 {"message": "User not found or no changes were made."}</pre>
+      <pre lang="json">500 {"message": error.message}</pre>
+    </td>
+  </tr>
+  <tr>
+    <td>PATCH</td>
+    <td><pre>/api/users/:email</pre></td>
+    <td>To edit the details of a single user by email</td>
+    <td>
+      <pre lang="json">200 {"message": "User updated successfully!"}</pre>
+      <pre lang="json">404 {"message": "POI not found or no changes were made."}</pre>
+      <pre lang="json">500 {"message": error.message}</pre>
+    </td>
+  </tr>
+  <tr>
+    <td>DELETE</td>
+    <td><pre>/api/pois/:id</pre></td>
+    <td>To delete a single POI by id</td>
+    <td>
+      <pre lang="json">200 {"message": "POI has been removed successfully!"}</pre>
+      <pre lang="json">404 {"message": "POI not found or no changes were made."}</pre>
+      <pre lang="json">500 {"message": error.message}</pre>
+    </td>
+  </tr>
+  <tr>
+    <td>DELETE</td>
+    <td><pre>/api/users/:email</pre></td>
+    <td>To delete a single user by email</td>
+    <td>
+      <pre lang="json">200 {"message": "User has been removed successfully!"}</pre>
+      <pre lang="json">404 {"message": "User not found or no changes were made."}</pre>
+      <pre lang="json">500 {"message": error.message}</pre>
+    </td>
+  </tr>
+</table>
 
-| HTTP   | Endpoints             | Action                                              | Response                                                |
-| ------ | ----------------------| ----------------------------------------------------|---------------------------------------------------------|
-| POST   | `/api/pois`           | To create new POI                                   |`200`<pre lang="json"> {"name": "Polemiko mouseio","category": "museum","longitude": 80,"latitude": 90, "_id": "xxxx","_v": 0}</pre>`500` <pre lang="json">{"message": error.message}</pre>|
-| POST   | `/api/users`          | To create new user                                  |`200` <pre lang="json">{user instance}</pre>`500` <pre lang="json">{"message":error.message}</pre>|
-| GET    | `/api/pois`           | To retrieve all or specific POIs based on parameters|`200` <pre lang="json">[{poi instance}, ...] //or {poi instance}</pre>`500` <pre lang="json">{"message":error.message}</pre>                                                         |
-| GET    | `/api/users`          | To retrieve all users                               |`200` <pre lang="json">[{user instance}, ...]</pre>`500` <pre lang="json">{"message":error.message}</pre>                                                         |
-| GET    | `/api/users/:email`   | To retrieve a single user by email                  |`200` <pre lang="json">{user instance}</pre>`500` <pre lang="json">{"message":error.message}</pre>                                                         |
-| PATCH  | `/api/pois/:id`       | To edit the details of a single POI by id           |`200` <pre lang="json">{"message":"POI updated successfully!"}</pre>`404` <pre lang="json">{"message":"POI not found or no changes were made."}</pre> 500` <pre lang="json">{"message":error.message}</pre>                                                     |
-| PATCH  | `/api/pois/upload/:id`| To add or edit the image of a single POI            |`200` <pre lang="json">{"message":"Image upload is successful!"}</pre>`404` <pre lang="json">{message:"User not found or no changes were made."}</pre>`500` <pre lang="json">{"message":error.message}</pre>                                    |
-| PATCH  | `/api/users/:email`   | To edit the details of a single user by email       |`200` <pre lang="json">{"message":"User updated successfully!"}</pre><br />`404` <pre lang="json">{"message":"POI not found or no changes were made."}</pre><br />`500` <pre lang="json">{"message":error.message}</pre>                                                         |
-| DELETE | `/api/pois/:id`       | To delete a single POI by id                        |`200` <pre lang="json">{"message":"POI has been removed successfully!"}</pre>`404` <pre lang="json">{"message":"POI not found or no changes were made."}</pre>`500` <pre lang="json">{"message":error.message}</pre>                                                        |
-| DELETE | `/api/users/:email`   | To delete a single user by email                    |`200` <pre lang="json">{"message":"User has been removed successfully!"}</pre>`404` <pre lang="json">{"message":"User not found or no changes were made."}</pre>`500` <pre lang="json">{"message":error.message}</pre>                                                        |
 
 ### Technologies Used
 
