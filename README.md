@@ -110,7 +110,27 @@ The API is designed to facilitate core data management operations (Create, Read,
       To retrieve all or specific POIs based on parameters
     </td>
     <td>
-      <pre lang="json">200 [{poi instance}, ...] //or {poi instance}</pre>
+      <pre lang="json">200 [ <br/>
+      {
+        "name": "Polemiko mouseio",<br/>
+       "category": "museum",<br/>
+       "longitude": 80,<br/>
+       "latitude": 90,<br/>
+       "_id": "xxxx",<br/>
+       "_v": 0<br/>
+       },<br/>
+      ...</br>
+     ]</br>
+     //or</br>
+     {
+       "name": "Polemiko mouseio",<br/>
+       "category": "museum",<br/>
+       "longitude": 80,<br/>
+       "latitude": 90,<br/>
+       "_id": "xxxx",<br/>
+       "_v": 0<br/>
+      }  
+      </pre>
       <pre lang="json">500 {"message": error.message}</pre>
     </td>
   </tr>
