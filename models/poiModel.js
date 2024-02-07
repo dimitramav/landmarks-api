@@ -4,7 +4,7 @@ const poiSchema = mongoose.Schema(
   {
     name: String,
     category: String,
-    address: Number,
+    address: String,
     longitude: Number,
     latitude: Number,
     image: {
