@@ -69,14 +69,12 @@ The API is designed to facilitate core data management operations (Create, Read,
   <tr>
     <th>HTTP</th>
     <th>Action</th>
-    <th>Endpoints</th>
     <th>Request Body</th>
     <th>Response</th>
   </tr>
   <tr>
     <td>POST</td>
-    <td>To create new POI</td>
-    <td><pre>api/pois</pre></td>
+    <td>To create new POI <pre>api/pois</pre></td>
     <td> <pre lang="json">{
     "name": "Polemiko mouseio",<br/>
     "category": "museum",<br/>
@@ -97,8 +95,7 @@ The API is designed to facilitate core data management operations (Create, Read,
   </tr>
   <tr>
     <td>POST</td>
-    <td>To create new user</td>
-    <td><pre>/api/users</pre></td>
+    <td>To create new user <pre>/api/users</pre></td>
     <td> <pre lang="json">{
     "name": "username",<br/>
     "age": 20,<br/>
@@ -118,9 +115,8 @@ The API is designed to facilitate core data management operations (Create, Read,
   <tr>
     <td>GET</td>
     <td>
-      To retrieve all or specific POIs based on parameters
+      To retrieve all or specific POIs based on parameters <pre>/api/pois</pre>
     </td>
-    <td><pre>/api/pois</pre></td>
     <td></td>
     <td>
       <pre lang="json">200 [ <br/>
@@ -151,8 +147,7 @@ The API is designed to facilitate core data management operations (Create, Read,
   </tr>
   <tr>
     <td>GET</td>
-    <td>To retrieve all users</td>
-    <td><pre>/api/users</pre></td>
+    <td>To retrieve all users <pre>/api/users</pre></td>
     <td></td>
     <td>
       <pre lang="json">200 [ <br/>
@@ -170,8 +165,7 @@ The API is designed to facilitate core data management operations (Create, Read,
   </tr>
   <tr>
     <td>GET</td>
-    <td>To retrieve a single user by email</td>
-    <td><pre>/api/users/:email</pre></td>
+    <td>To retrieve a single user by email <pre>/api/users/:email</pre></td>
     <td></td>
     <td>
       <pre lang="json">200 {
@@ -186,8 +180,7 @@ The API is designed to facilitate core data management operations (Create, Read,
   </tr>
   <tr>
     <td>PATCH</td>
-    <td>To edit the details of a single POI by id</td>
-    <td><pre>/api/pois/:id</pre></td>
+    <td>To edit the details of a single POI by id <pre>/api/pois/:id</pre></td>
     <td><pre>modified POI</pre></td>
     <td>
       <pre lang="json">200 {"message": "POI updated successfully!"}</pre>
@@ -197,8 +190,7 @@ The API is designed to facilitate core data management operations (Create, Read,
   </tr>
   <tr>
     <td>PATCH</td>
-    <td>To add or edit the image of a single POI</td>
-    <td><pre>/api/pois/upload/:id</pre></td>
+    <td>To add or edit the image of a single POI <pre>/api/pois/upload/:id</pre></td>
     <td><pre lang="json">{ "image": FILE }</pre></td>
     <td>
       <pre lang="json">200 {"message": "Image upload is successful!"}</pre>
@@ -208,8 +200,7 @@ The API is designed to facilitate core data management operations (Create, Read,
   </tr>
   <tr>
     <td>PATCH</td>
-    <td>To edit the details of a single user by email</td>
-    <td><pre>/api/users/:email</pre></td>
+    <td>To edit the details of a single user by email <pre>/api/users/:email</pre></td>
     <td><pre>modified user</pre></td>
     <td>
       <pre lang="json">200 {"message": "User updated successfully!"}</pre>
@@ -219,8 +210,7 @@ The API is designed to facilitate core data management operations (Create, Read,
   </tr>
   <tr>
     <td>DELETE</td>
-    <td>To delete a single POI by id</td>
-    <td><pre>/api/pois/:id</pre></td>
+    <td>To delete a single POI by id <pre>/api/pois/:id</pre></td>
     <td></td>
     <td>
       <pre lang="json">200 {"message": "POI has been removed successfully!"}</pre>
@@ -230,8 +220,7 @@ The API is designed to facilitate core data management operations (Create, Read,
   </tr>
   <tr>
     <td>DELETE</td>
-    <td>To delete a single user by email</td>
-    <td><pre>/api/users/:email</pre></td>
+    <td>To delete a single user by email <pre>/api/users/:email</pre></td>
     <td></td>
     <td>
       <pre lang="json">200 {"message": "User has been removed successfully!"}</pre>
