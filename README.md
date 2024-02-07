@@ -78,6 +78,7 @@ The API is designed to facilitate core data management operations (Create, Read,
     <td> <pre lang="json">{
     "name": "Polemiko mouseio",<br/>
     "category": "museum",<br/>
+    "address": "Rizari 2",<br/>
     "longitude": 80,<br/>
     "latitude": 90<br/>
  }</pre></td>
@@ -85,6 +86,7 @@ The API is designed to facilitate core data management operations (Create, Read,
       <pre lang="json">200 {
        "name": "Polemiko mouseio",<br/>
        "category": "museum",<br/>
+       "address": "Rizari 2",<br/>
        "longitude": 80,<br/>
        "latitude": 90,<br/>
        "_id": "xxxx",<br/>
@@ -123,6 +125,7 @@ The API is designed to facilitate core data management operations (Create, Read,
       {
         "name": "Polemiko mouseio",<br/>
         "category": "museum",<br/>
+        "address": "Rizari 2",<br/>
         "longitude": 80,<br/>
         "latitude": 90,<br/>
         "image":[optional]
@@ -135,6 +138,7 @@ The API is designed to facilitate core data management operations (Create, Read,
      {
        "name": "Polemiko mouseio",<br/>
        "category": "museum",<br/>
+       "address": "Rizari 2",<br/>
        "longitude": 80,<br/>
        "latitude": 90,<br/>
        "image":[optional]
