@@ -43,7 +43,6 @@ exports.updateUser = async (req, res) => {
         returnOriginal: false,
       }
     );
-    console.log(user);
     if (user) {
       res.status(200).json({ message: "User updated successfully!" });
     } else {
